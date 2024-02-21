@@ -1,5 +1,6 @@
 from app import app
 from flask import render_template, request, redirect, url_for, flash
+import datetime
 
 
 ###
@@ -15,12 +16,26 @@ def home():
 @app.route('/about/')
 def about():
     """Render the website's about page."""
-    return render_template('about.html', name="Mary Jane")
+    return render_template('about.html', name="Javon Laing")
 
+
+def format_date_joined(date):
+    if date is None:
+        return None
+    return date.strftime("%B, %Y")
+
+
+@app.route('/profile')
+def profile():
+    date_joined = datetime.date(2021, 7, 21)
+    formatted_date_joined = "Joined " + format_date_joined(date_joined)
+    """Render the website's profile page."""
+    return render_template('profile.html', date_joined=formatted_date_joined)
 
 ###
 # The functions below should be applicable to all Flask apps.
 ###
+
 
 @app.route('/<file_name>.txt')
 def send_text_file(file_name):

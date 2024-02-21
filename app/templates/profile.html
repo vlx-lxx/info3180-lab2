@@ -1,0 +1,49 @@
+{% extends "base.html" %}
+
+{% block main %}
+
+<div class="profile-div">
+    <div class="card">
+        <header class="top">
+            <img src="{{ url_for('static', filename='profile.jpg') }}" alt="Profile Picture">
+            <h1>Javon Laing</h1>
+            <p>@vlx-lxx</p>
+            <p>Ocho Rios, Jamaica</p>
+            <p>{{ date_joined }}</p>
+        </header>
+        <main>
+            <section>
+                <p>I'm a web developer on the lookout for exciting client projects, passionate about crafting innovative
+                    digital
+                    solutions to meet your needs.</p>
+            </section>
+            <section>
+                <div class="container">
+                    <div class="row">
+                        <div class="column">
+                            <div class="numbers">
+                                <h2>7</h2>
+                                <p>Posts</p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="numbers">
+                                <h2>2432</h2>
+                                <p>Following</p>
+                            </div>
+                        </div>
+                        <div class="column">
+                            <div class="numbers">
+                                <h2>1378</h2>
+                                <p>Followers</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button>Follow</button>
+            </section>
+        </main>
+    </div>
+</div>
+
+{% endblock %}
